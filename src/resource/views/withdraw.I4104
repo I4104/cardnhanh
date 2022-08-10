@@ -1,0 +1,72 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+        	<div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title font-size-20"><i class="fa fa-coins"></i> Tạo đơn rút tiền</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label>Số tiền:</label>
+                                <input type="text" class="form-control shadow-none" name="price" id="price" placeholder="Nhập số tiền chuyển" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label>Ngân hàng:</label>
+                                <select class="form-control shadow-none" name="bank" required>
+                                	<option value="">Chọn một ngân hàng</option>
+                                	<option value="MOMO">MOMO</option>
+                                	<option value="MB BAN">MB BANK</option>
+                                	<option value="TECHCOMBANK">TECHCOMBANK</option>
+                                	<option value="SACOMBANK">SACOMBANK</option>
+                                	<option value="VIETINBANK">VIETINBANK</option>
+                                	<option value="ACB">ACB</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label>Số tài khoản:</label>
+                                <input type="text" class="form-control shadow-none" name="user_number" placeholder="Nhập số tài khoản" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label>Tên tài khoản:</label>
+                                <input type="text" class="form-control shadow-none" name="user_name" placeholder="Nhập tên tài khoản" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label>Nội dung chuyển khoản:</label>
+                                <input type="text" class="form-control shadow-none" name="note" placeholder="Nhập nội dung chuyển khoản (có thể bỏ trống)">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <button class="btn btn-success float-right">Xác nhận tạo đơn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title font-size-20"><i class="fa fa-history"></i> Lịch sử rút tiền</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12 table-responsive">
+                                <table class="table table-bordered text-center" id="table_withdraw">
+                                	<thead class="bg-primary text-white">
+                                		<th>Mã giao dịch</th>
+                                		<th>Số tiền</th>
+                                		<th>Ngân hàng</th>
+                                		<th>Nội dung</th>
+                                		<th>Trạng thái</th>
+                                		<th>Thời gian</th>
+                                	</thead>
+                                	<tbody id="history_withdraw">
+                                		
+                                	</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

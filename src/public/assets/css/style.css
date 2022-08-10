@@ -1,0 +1,17 @@
+.bottom-border-primary {
+    border-bottom: 5px solid;
+    border-bottom-color: #4e73df;
+    border-radius: 5px;
+}
+
+.bottom-border-success {
+    border-bottom: 5px solid;
+    border-bottom-color: #1cc88a;
+    border-radius: 5px;
+}
+
+.bottom-border-danger {
+    border-bottom: 5px solid;
+    border-bottom-color: red;
+    border-radius: 5px;
+}

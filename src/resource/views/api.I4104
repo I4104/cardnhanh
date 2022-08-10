@@ -1,0 +1,286 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title font-size-20"><i class="fa fa-code"></i> QUẢN LÝ API</h4>
+                                <hr>
+                                <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead class="bg-primary text-white">
+                                        <th>ID</th>
+                                        <th>APIKey</th>
+                                        <th>Link callback</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td colspan="5" class="text-center">Không có dữ liệu!</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title font-size-20"><span class="badge badge-danger">POST</span> GỬI THẺ CHỜ XỬ LÝ:</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-6" style="padding: 0 20px 20px 0;">
+                                                <div class="table-responsive" style="color: #cfdce8; background-color: rgb(70, 70, 70); padding: 20px; font-family: consolas; font-size: 12.5px;" id="code">
+                                                    <span style="color: gray; font-size: 12px;"># Created by I4104 - Please do not remake</span><br>
+                                                    $ch = <span style="color: #fc4e4e; font-style: italic;">curl_init</span>();<br>
+                                                    $fields = <span style="color: #fc4e4e; font-style: italic;">array</span>(<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">APIkey</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "<span style="color: #2af79e;">YOUR API KEY</span>",<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">mathe</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "<span style="color: #2af79e;">10008459608983</span>",<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">seri</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "<span style="color: #2af79e;">58102930192049</span>",<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">type</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "<span style="color: #2af79e;">Viettel</span>",<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">menhgia</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "<span style="color: #2af79e;">10000</span>",<br>
+                                                    &emsp;&emsp;&emsp;"<span style="color: #2af79e;">content</span>" <span style="color: #fc4e4e; font-style: italic;">=></span> "",<br>
+                                                    );<br>
+                                                    $data = <span style="color: #fc4e4e; font-style: italic;">html_build_query</span>($fields);<br>
+                                                    <br>
+                                                    $url = "<span style="color: #2af79e;">https://cardnhanh.vn/api/charging</span>";<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_URL</span>, $url);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_POST</span>, 1);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_POSTFIELDS</span>, $data);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_RETURNTRANSFER</span>, true);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_CONNECTTIMEOUT</span>, 3);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_setopt</span>($ch, <span style="color: #2e66ff; font-style: italic;">CURLOPT_TIMEOUT</span>, 20);<br>
+                                                    <br>
+                                                    $response = <span style="color: #fc4e4e; font-style: italic;">curl_exec</span>($ch);<br>
+                                                    <span style="color: #fc4e4e; font-style: italic;">curl_close</span>($ch);<br>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 row">
+                                                <h4>* Trong đó:</h4>
+                                                <div class="col-md-12 table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>APIkey</td>
+                                                                <td>Apikey lấy từ website cardnhanh.vn</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>mathe</td>
+                                                                <td>Mã thẻ cào</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>seri</td>
+                                                                <td>Số serial của thẻ cào</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>type</td>
+                                                                <td>Loại thẻ</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>menhgia</td>
+                                                                <td>Mệnh giá của thẻ</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>content</td>
+                                                                <td>Nội dung gửi kèm thẻ, có thể tạo random 1 chuỗi kí tự dùng để kiểm tra thẻ khi trả callback (VD: <?php echo md5(time()); ?>)</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <br>
+                                                <div class="table-responsive">
+                                                    <hr>
+                                                    <h4>* Kết quả trả về:</h4>
+                                                    <span class="badge badge-success">Thẻ đúng:</span>
+                                                    <div class="table-responsive" style="color: #cfdce8; background-color: rgb(70, 70, 70); padding: 20px; font-family: consolas; font-size: 12.5px;">
+                                                        {"status":"00","msg":"Gửi thẻ thành công, vui lòng chờ duyệt!","transaction_id":"Mã giao dịch dùng để kiểm tra khi trả callback"}
+                                                    </div>
+                                                    <span class="badge badge-danger">Thẻ sai:</span>
+                                                    <div class="table-responsive" style="color: #cfdce8; background-color: rgb(70, 70, 70); padding: 20px; font-family: consolas; font-size: 12.5px;">
+                                                        {"status":"Mã lỗi sẽ cập nhật bên dưới","msg":"Trả về thông báo lỗi"}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title font-size-20"><span class="badge badge-danger">ERROR</span> MÃ LỖI:</h4>
+                                <hr>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="bg-primary text-white text-center">
+                                            <th>Mã lỗi</th>
+                                            <th>Nội dung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">54</span></td>
+                                                <td>APIKey không chính xác!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">55</span></td>
+                                                <td>Chưa nhập mã thẻ cào!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">56</span></td>
+                                                <td>Chưa nhập số Serial!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">52</span></td>
+                                                <td>Chưa Chọn Mệnh Giá!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">53</span></td>
+                                                <td>Chưa nhập loại thẻ!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">2</span></td>
+                                                <td>Thẻ đã tồn tại trên hệ thống!</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span class="badge badge-danger">47</span></td>
+                                                <td>Bao gồm một số lỗi khác, có kèm theo message thông báo</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title font-size-20"><span class="badge badge-danger">POST</span> DỮ LIỆU CALLBACK TRẢ VỀ:</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-6" style="padding: 0 20px 20px 0;">
+                                                <div class="table-responsive" style="color: #cfdce8; background-color: rgb(70, 70, 70); padding: 20px; font-family: consolas; font-size: 12.5px;" id="callback">
+                                                    <span style="color: gray; font-size: 12px;"># Created by I4104 - Please do not remake</span><br>
+                                                    $status = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">status</span>']) ? $_POST['<span style="color: #2af79e;">status</span>'] : "";<br>
+                                                    $serial = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">serial</span>']) ? $_POST['<span style="color: #2af79e;">serial</span>'] : "";<br>
+                                                    $pin = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">pin</span>']) ? $_POST['<span style="color: #2af79e;">pin</span>'] : "";<br>
+                                                    $card_type = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">card_type</span>']) ? $_POST['<span style="color: #2af79e;">card_type</span>'] : "";<br>
+                                                    $amount = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">amount</span>']) ? $_POST['<span style="color: #2af79e;">amount</span>'] : "";<br>
+                                                    $real_amount = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">real_amount</span>']) ? $_POST['<span style="color: #2af79e;">real_amount</span>'] : "";<br>
+                                                    $amount = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">amount</span>']) ? $_POST['<span style="color: #2af79e;">amount</span>'] : "";<br>
+                                                    $receive_amount = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">receive_amount</span>']) ? $_POST['<span style="color: #2af79e;">receive_amount</span>'] : "";<br>
+                                                    $transaction_id = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">transaction_id</span>']) ? $_POST['<span style="color: #2af79e;">transaction_id</span>'] : "";<br>
+                                                    $content = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">content</span>']) ? $_POST['<span style="color: #2af79e;">content</span>'] : "";<br>
+                                                    $noidung = <span style="color: #fc4e4e; font-style: italic;">isset</span>($_POST['<span style="color: #2af79e;">noidung</span>']) ? $_POST['<span style="color: #2af79e;">noidung</span>'] : "";<br>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 row">
+                                                <div class="col-md-12">
+                                                    <h4>* Trong đó:</h4>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>status</td>
+                                                                    <td>
+                                                                        <span class="badge badge-danger text-white">thatbai</span> Thẻ cào lỗi<br>
+                                                                        <span class="badge badge-warning text-white">saimenhgia</span> Thẻ cào sai mệnh giá<br>
+                                                                        <span class="badge badge-success text-white">thanhcong</span> Thẻ thành công
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>pin</td>
+                                                                    <td>Mã thẻ cào</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>serial</td>
+                                                                    <td>Số serial của thẻ cào</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>card_type</td>
+                                                                    <td>Loại thẻ</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>amount</td>
+                                                                    <td>Mệnh giá của thẻ gửi lên</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>real_amount</td>
+                                                                    <td>Giá trị thực nhận tại website cardnhanh.vn</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>receive_amount</td>
+                                                                    <td>Thẻ sai mệnh giá sẽ trả về mệnh giá thực</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>transaction_id</td>
+                                                                    <td>Mã giao dịch nhận khi gửi thẻ lên</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>content</td>
+                                                                    <td>Nội dung mà bạn đã gửi kèm thẻ</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>noidung</td>
+                                                                    <td>Nội dung trạng thái của thẻ</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card card-body">
+                    <h4 class="card-title font-size-20"><i class="fas fa-plus"></i> TẠO API KEY MỚI</h4>
+                    <hr>
+                    <form id="apikey">
+                        <div class="form-group">
+                            <label>❖ Link callback:</label>
+                            <input class="form-control shadow-none" type="text" name="callback" id="callback" placeholder="Nhập link callback" required>
+                        </div>
+                        <button class="btn btn-success w-100" id="btn_save">Lưu</button>
+                    </form>
+                </div>
+                <div class="card card-body">
+                    <h4 class="card-title font-size-20"><i class="fas fa-edit"></i> SỬA API KEY</h4>
+                    <hr>
+                    <form id="edit_apikey">
+                        <div class="form-group">
+                            <label>❖ API KEY muốn sửa:</label>
+                            <select class="form-control" name="apikey" id="apikey" required> 
+                                <option>Chọn một apikey để sửa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>❖ Link callback:</label>
+                            <input class="form-control shadow-none" type="text" name="callback" id="edit_callback" placeholder="Nhập link callback" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-danger w-100">Xóa</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-success w-100">Lưu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

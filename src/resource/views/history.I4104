@@ -1,0 +1,66 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title font-size-20"><i class="fa fa-chart-area"></i> Thống kê gạch thẻ</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12 table-responsive">
+                                <table class="table table-bordered text-center" id="table_statics">
+                                    <thead class="bg-primary text-white">
+                                        <th>Loại thẻ</th>
+                                        <th>Tổng</th>
+                                        <th>Thành công</th>
+                                        <th>Thất bại</th>
+                                        <th>Sai mệnh giá</th>
+                                        <th>Tổng thực nhận</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Viettel</td>
+                                            <td>1.021</td>
+                                            <td>1000</td>
+                                            <td>11</td>
+                                            <td>10</td>
+                                            <td>23.031.231</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title font-size-20"><i class="fa fa-history"></i> Lịch sử gạch thẻ</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12 table-responsive">
+                                <table class="table table-bordered text-center" id="table_history">
+                                	<thead class="bg-primary text-white">
+                                		<th>Mã giao dịch</th>
+                                		<th>Loại thẻ</th>
+                                		<th>Mệnh giá</th>
+                                		<th>Serial</th>
+                                		<th>Mã thẻ</th>
+                                		<th>Thực nhận</th>
+                                		<th>Mệnh giá thực</th>
+                                		<th>Trạng thái</th>
+                                		<th>Thời gian</th>
+                                	</thead>
+                                	<tbody id="history_card">
+                                		
+                                	</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

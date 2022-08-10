@@ -1,0 +1,179 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <form class="card-body" id="card">
+                                <h4 class="card-title font-size-20"><i class="fa fa-paper-plane"></i> ĐỔI THẺ CÀO</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 form-group">
+                                                <label>Loại thẻ cào:</label>
+                                                <select class="form-control" name="type" required>
+                                                    <option value="">Chọn nhà mạng</option>
+                                                    <option value="Viettel">Viettel</option>
+                                                    <option value="Vinaphone">Vinaphone</option>
+                                                    <option value="Vietnamobile">Vietnamobile</option>
+                                                    <option value="Mobifone">Mobifone</option>
+                                                    <option value="Zing">Zing</option>
+                                                    <option value="Gate">Gate</option>
+                                                    <option value="Garena">Garena</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label>Mệnh giá thẻ:</label>
+                                                    <select class="form-control" name="amount" required>
+                                                        <option value="">Chọn mệnh giá</option>
+                                                        <option value="10000">10.000đ</option>
+                                                        <option value="20000">20.000đ</option>
+                                                        <option value="30000">30.000đ</option>
+                                                        <option value="50000">50.000đ</option>
+                                                        <option value="100000">100.000đ</option>
+                                                        <option value="200000">200.000đ</option>
+                                                        <option value="300000">300.000đ</option>
+                                                        <option value="500000">500.000đ</option>
+                                                        <option value="1000000">1.000.000đ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 form-group">
+                                                <label>Mã thẻ cào:</label>
+                                                <input type="text" class="form-control" placeholder="Mã thẻ cào" name="pin" required>
+                                            </div>
+                                            <div class="col-lg-6 form-group">
+                                                <label>Serial:</label>
+                                                <input type="text" class="form-control" placeholder="Serial thẻ" name="serial" required>
+                                            </div>
+                                        </div>
+                                        <div id="emplacementRecaptcha"></div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-4"></div>
+                                            <div class="col-lg-6">
+                                                <p>
+                                                    <b style="font-weight: 800; font-size: 16px;"><span class="text-danger">*</span> Chú ý: <br></b>
+                                                    ❖ Cố tình nhập sai nhiều lần sẽ bị khóa tài khoản. <br>
+                                                    ❖ Sai thông tin, mất thẻ, admin không chịu trách nhiệm <br>
+                                                    ❖ Sai mệnh giá, nhận 50% giá trị thực nhận.<br>
+                                                    ❖ Vui lòng kiểm tra kĩ dữ liệu trước khi gửi thẻ.<br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-lg-12 text-center">
+                                        {{# if hasLogin }}
+                                            <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i> Đổi thẻ cào</button>
+                                        {{ else }}
+                                            <button class="btn btn-primary" disabled><i class="fa fa-paper-plane"></i> Vui lòng đăng nhập</button>
+                                        {{/ if }}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title font-size-20"><i class="fa fa-history"></i> Lịch sử đổi thẻ</h4>
+                                <hr>
+                                <div class="row">
+                                    {{# if hasLogin }}
+                                        <div class="col-lg-12 table-responsive">
+                                            <table class="table table-bordered text-center" id="table_history">
+                                                <thead class="bg-primary text-white">
+                                                    <th class="text-center">Mã giao dịch</th>
+                                                    <th class="text-center">Loại thẻ</th>
+                                                    <th class="text-center">Mệnh giá</th>
+                                                    <th class="text-center">Serial</th>
+                                                    <th class="text-center">Mã thẻ</th>
+                                                    <th class="text-center">Thực nhận</th>
+                                                    <th class="text-center">Mệnh giá thực</th>
+                                                    <th class="text-center">Trạng thái</th>
+                                                    <th class="text-center">Thời gian</th>
+                                                </thead>
+                                                <tbody id="history_card">
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    {{ else }}
+                                        <div class="col-lg-12">
+                                            <p class="text-center">Chưa có giao dịch nào gần đây!</p>
+                                        </div>
+                                    {{/ if }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card card-body">
+                    <h4 class="card-title font-size-20"><i class="fas fa-percentage"></i> BẢNG CHIẾT KHẤU</h4>
+                    <div class="table-responsive">
+                        <div class="form-group">
+                            <select class="form-control" id="rate">
+                                <option>Xem chiết khấu thẻ Viettel</option>
+                                <option>Xem chiết khấu thẻ Vinaphone</option>
+                                <option>Xem chiết khấu thẻ Mobifone</option>
+                                <option>Xem chiết khấu thẻ Vietnamobile</option>
+                                <option>Xem chiết khấu thẻ Zing</option>
+                                <option>Xem chiết khấu thẻ Gate</option>
+                                <option>Xem chiết khấu thẻ Garena</option>
+                            </select>
+                        </div>
+                        <table class="table table-bordered tablePercentDiscount">
+                            <thead class="bg-primary text-white">
+                                <th style="text-align: center"><i class="fas fa-sort-amount-down-alt"></i> Mệnh giá</th>
+                                <th style="text-align: center"><i class="fas fa-percentage"></i> Chiết khấu</th>
+                            </thead>
+                            <tbody>
+                                <tr style="text-align: center" >
+                                    <td>10.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>20.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>50.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>100.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>200.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>300.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>500.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>1.000.000</td>
+                                    <td><b>20.0%</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
